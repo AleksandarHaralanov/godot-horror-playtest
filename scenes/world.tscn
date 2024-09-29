@@ -1,22 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://cvt6nqbtodtjm"]
+[gd_scene load_steps=2 format=3 uid="uid://cvt6nqbtodtjm"]
 
 [ext_resource type="PackedScene" uid="uid://dtrykwk7pmyk5" path="res://scenes/player.tscn" id="1_euj77"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_thmga"]
-
-[sub_resource type="PlaneMesh" id="PlaneMesh_jdqr6"]
-
 [node name="World" type="Node3D"]
 
-[node name="Ground" type="StaticBody3D" parent="."]
-transform = Transform3D(10, 0, 0, 0, 1, 0, 0, 0, 10, 0, 0, 0)
+[node name="Stage" type="Node3D" parent="."]
 
-[node name="Collision" type="CollisionShape3D" parent="Ground"]
-transform = Transform3D(2, 0, 0, 0, 0.01, 0, 0, 0, 2, 0, 0, 0)
-shape = SubResource("BoxShape3D_thmga")
-
-[node name="Mesh" type="MeshInstance3D" parent="Ground"]
-mesh = SubResource("PlaneMesh_jdqr6")
+[node name="Ground" type="CSGBox3D" parent="Stage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.5, 0)
+use_collision = true
+size = Vector3(50, 1, 50)
 
 [node name="Player" parent="." instance=ExtResource("1_euj77")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
