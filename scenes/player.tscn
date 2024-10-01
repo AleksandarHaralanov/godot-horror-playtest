@@ -1,8 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dtrykwk7pmyk5"]
+[gd_scene load_steps=8 format=3 uid="uid://dtrykwk7pmyk5"]
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_3sq64"]
 [ext_resource type="Script" path="res://scripts/player/camera.gd" id="2_v68vc"]
 [ext_resource type="Script" path="res://scripts/player/flashlight.gd" id="3_ivbhy"]
+[ext_resource type="AudioStream" uid="uid://4tcte7th86xk" path="res://assets/sounds/effects/player/flashlight_on.wav" id="4_wnlan"]
+[ext_resource type="AudioStream" uid="uid://cgbriio4c2pws" path="res://assets/sounds/effects/player/flashlight_off.wav" id="5_0ve23"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6ils4"]
 
@@ -25,7 +27,15 @@ script = ExtResource("2_v68vc")
 [node name="Camera" type="Camera3D" parent="Head"]
 
 [node name="Flashlight" type="SpotLight3D" parent="Head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
-light_color = Color(1, 1, 0.772549, 1)
-spot_angle = 20.0
+light_color = Color(1, 1, 0.86, 1)
+light_energy = 0.0
+light_volumetric_fog_energy = 0.1
+spot_range = 100.0
+spot_angle_attenuation = 3.605
 script = ExtResource("3_ivbhy")
+
+[node name="ToggleOff" type="AudioStreamPlayer3D" parent="Head/Flashlight"]
+stream = ExtResource("5_0ve23")
+
+[node name="ToggleOn" type="AudioStreamPlayer3D" parent="Head/Flashlight"]
+stream = ExtResource("4_wnlan")

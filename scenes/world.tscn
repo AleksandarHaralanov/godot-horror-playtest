@@ -1,8 +1,33 @@
-[gd_scene load_steps=2 format=3 uid="uid://cvt6nqbtodtjm"]
+[gd_scene load_steps=5 format=3 uid="uid://cvt6nqbtodtjm"]
 
 [ext_resource type="PackedScene" uid="uid://dtrykwk7pmyk5" path="res://scenes/player.tscn" id="1_euj77"]
 
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_kblnk"]
+sky_top_color = Color(0.128201, 0.0836061, 0.0124793, 1)
+sky_horizon_color = Color(0, 0, 0, 1)
+ground_bottom_color = Color(0, 0, 0, 1)
+ground_horizon_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Sky" id="Sky_07x2p"]
+sky_material = SubResource("ProceduralSkyMaterial_kblnk")
+
+[sub_resource type="Environment" id="Environment_wei87"]
+background_mode = 2
+sky = SubResource("Sky_07x2p")
+tonemap_mode = 3
+sdfgi_enabled = true
+volumetric_fog_enabled = true
+volumetric_fog_albedo = Color(0.611765, 0.611765, 0.611765, 1)
+volumetric_fog_emission = Color(0.121649, 0.0793508, 0.0308107, 1)
+volumetric_fog_length = 128.0
+adjustment_enabled = true
+
 [node name="World" type="Node3D"]
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]
+environment = SubResource("Environment_wei87")
 
 [node name="Stage" type="Node3D" parent="."]
 
