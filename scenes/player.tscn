@@ -8,7 +8,7 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6ils4"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_731cy"]
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_djjhb"]
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -18,21 +18,25 @@ script = ExtResource("1_3sq64")
 shape = SubResource("CapsuleShape3D_6ils4")
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_731cy")
+mesh = SubResource("CapsuleMesh_djjhb")
 
 [node name="Head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 script = ExtResource("2_v68vc")
 
 [node name="Camera" type="Camera3D" parent="Head"]
+fov = 90.0
 
 [node name="Flashlight" type="SpotLight3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.25)
 light_color = Color(1, 1, 0.86, 1)
 light_energy = 0.0
 light_volumetric_fog_energy = 0.1
-spot_range = 100.0
+spot_range = 20.0
+spot_angle = 60.0
 spot_angle_attenuation = 3.605
 script = ExtResource("3_ivbhy")
+metadata/toggle = false
 
 [node name="ToggleOff" type="AudioStreamPlayer3D" parent="Head/Flashlight"]
 stream = ExtResource("5_0ve23")
