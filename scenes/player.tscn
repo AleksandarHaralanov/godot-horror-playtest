@@ -38,8 +38,8 @@ spot_range = 15.0
 spot_angle = 20.0
 metadata/toggle = false
 
-[node name="ToggleOff" type="AudioStreamPlayer3D" parent="Hand/Flashlight"]
+[node name="SoundOff" type="AudioStreamPlayer3D" parent="Hand/Flashlight"]
 stream = ExtResource("5_0ve23")
 
-[node name="ToggleOn" type="AudioStreamPlayer3D" parent="Hand/Flashlight"]
+[node name="SoundOn" type="AudioStreamPlayer3D" parent="Hand/Flashlight"]
 stream = ExtResource("4_wnlan")

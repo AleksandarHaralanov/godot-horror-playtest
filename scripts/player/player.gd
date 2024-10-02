@@ -17,8 +17,8 @@ var flashlight_target_energy: float = 0.0
 @onready var camera: Camera3D = $Head/Camera
 @onready var hand: Node3D = $Hand
 @onready var flashlight: SpotLight3D = $Hand/Flashlight
-@onready var flashlight_toggle_off: AudioStreamPlayer3D = $Hand/Flashlight/ToggleOff
-@onready var flashlight_toggle_on: AudioStreamPlayer3D = $Hand/Flashlight/ToggleOn
+@onready var flashlight_sound_off: AudioStreamPlayer3D = $Hand/Flashlight/SoundOff
+@onready var flashlight_sound_on: AudioStreamPlayer3D = $Hand/Flashlight/SoundOn
 
 func _ready() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
@@ -32,10 +32,10 @@ func _input(event) -> void:
 	if Input.is_action_just_pressed("flashlight"):
 		if flashlight.get_meta("toggle"):
 			flashlight_target_energy = 0.0
-			flashlight_toggle_off.play()
+			flashlight_sound_off.play()
 		else:
 			flashlight_target_energy = 4.0
-			flashlight_toggle_on.play()
+			flashlight_sound_on.play()
 		flashlight.set_meta("toggle", !flashlight.get_meta("toggle"))
 
 func _process(delta: float) -> void:
