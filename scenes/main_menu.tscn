@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c3owf3uxg7s2y"]
 
 [ext_resource type="Script" path="res://scripts/ui/main_menu.gd" id="1_jctrw"]
-[ext_resource type="FontFile" uid="uid://43gp8wv2ulxc" path="res://assets/fonts/requiem/Requiem.ttf" id="1_s4530"]
+[ext_resource type="FontFile" uid="uid://pbo7kdrt0fua" path="res://assets/fonts/requiem/Requiem.ttf" id="1_s4530"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sopqj"]
 

@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://scripts/player/player.gd" id="1_3sq64"]
 [ext_resource type="Script" path="res://scripts/player/flashlight.gd" id="3_ivbhy"]
-[ext_resource type="AudioStream" uid="uid://4tcte7th86xk" path="res://assets/sounds/effects/player/flashlight_on.wav" id="4_wnlan"]
-[ext_resource type="AudioStream" uid="uid://cgbriio4c2pws" path="res://assets/sounds/effects/player/flashlight_off.wav" id="5_0ve23"]
+[ext_resource type="AudioStream" uid="uid://budg5r7ffuvst" path="res://assets/sounds/effects/player/flashlight_on.wav" id="4_wnlan"]
+[ext_resource type="AudioStream" uid="uid://dwaffa8ip18ct" path="res://assets/sounds/effects/player/flashlight_off.wav" id="5_0ve23"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_6ils4"]
 
