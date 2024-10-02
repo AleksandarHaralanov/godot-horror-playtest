@@ -1,0 +1,117 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3owf3uxg7s2y"]
+
+[ext_resource type="Script" path="res://scripts/ui/main_menu.gd" id="1_jctrw"]
+[ext_resource type="FontFile" uid="uid://43gp8wv2ulxc" path="res://assets/fonts/requiem/Requiem.ttf" id="1_s4530"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sopqj"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jctrw")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VerticalBox" type="VBoxContainer" parent="Margin"]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="Seperator" type="Control" parent="Margin/VerticalBox"]
+layout_mode = 2
+
+[node name="Title" type="Label" parent="Margin/VerticalBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.55, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_s4530")
+theme_override_font_sizes/font_size = 64
+text = "HORROR PLAYTEST"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HorizontalBox" type="HBoxContainer" parent="Margin"]
+layout_mode = 2
+alignment = 1
+
+[node name="VerticalBox" type="VBoxContainer" parent="Margin/HorizontalBox"]
+layout_mode = 2
+theme_override_constants/separation = 18
+alignment = 1
+
+[node name="Seperator" type="Control" parent="Margin/HorizontalBox/VerticalBox"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="Margin/HorizontalBox/VerticalBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_s4530")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = SubResource("StyleBoxEmpty_sopqj")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_sopqj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_sopqj")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_sopqj")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_sopqj")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_sopqj")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_sopqj")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_sopqj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_sopqj")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_sopqj")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_sopqj")
+text = "PLAY"
+
+[node name="Seperator2" type="Control" parent="Margin/HorizontalBox/VerticalBox"]
+layout_mode = 2
+
+[node name="Options" type="Button" parent="Margin/HorizontalBox/VerticalBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_s4530")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = SubResource("StyleBoxEmpty_sopqj")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_sopqj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_sopqj")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_sopqj")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_sopqj")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_sopqj")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_sopqj")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_sopqj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_sopqj")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_sopqj")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_sopqj")
+text = "OPTIONS"
+
+[node name="Seperator3" type="Control" parent="Margin/HorizontalBox/VerticalBox"]
+layout_mode = 2
+
+[node name="Exit" type="Button" parent="Margin/HorizontalBox/VerticalBox"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_s4530")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/focus = SubResource("StyleBoxEmpty_sopqj")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_sopqj")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_sopqj")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_sopqj")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_sopqj")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_sopqj")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_sopqj")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_sopqj")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_sopqj")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_sopqj")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_sopqj")
+text = "EXIT"

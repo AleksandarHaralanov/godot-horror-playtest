@@ -2,8 +2,8 @@ extends SpotLight3D
 
 var target_energy: float = 0.0
 
-@onready var toggle_off = $ToggleOff
-@onready var toggle_on = $ToggleOn
+@onready var toggle_off: AudioStreamPlayer3D = $ToggleOff
+@onready var toggle_on: AudioStreamPlayer3D = $ToggleOn
 
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("flashlight"):
