@@ -19,4 +19,4 @@ For full compliance, please refer to the following links:
 
 ## Contributing
 
-Please check [CONTRIBUTING](./CONTRIBUTING.md).
+To get started contributing to the project, see the [CONTRIBUTING](./CONTRIBUTING.md).
