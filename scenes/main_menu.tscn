@@ -79,7 +79,7 @@ text = "PLAY"
 [node name="Seperator2" type="Control" parent="Margin/HorizontalBox/VerticalBox"]
 layout_mode = 2
 
-[node name="Options" type="Button" parent="Margin/HorizontalBox/VerticalBox"]
+[node name="Settings" type="Button" parent="Margin/HorizontalBox/VerticalBox"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_s4530")
 theme_override_font_sizes/font_size = 48
@@ -94,7 +94,7 @@ theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_sopqj")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_sopqj")
 theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_sopqj")
 theme_override_styles/normal = SubResource("StyleBoxEmpty_sopqj")
-text = "OPTIONS"
+text = "SETTINGS"
 
 [node name="Seperator3" type="Control" parent="Margin/HorizontalBox/VerticalBox"]
 layout_mode = 2
