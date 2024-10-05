@@ -1,25 +1,17 @@
-class_name MainMenu
-
 extends Control
 
-@onready var play: Button = $Margin/HorizontalBox/VerticalBox/Play as Button
-@onready var settings: Button = $Margin/HorizontalBox/VerticalBox/Settings as Button
-@onready var exit: Button = $Margin/HorizontalBox/VerticalBox/Exit as Button
-@onready var world = preload("res://scenes/world.tscn")
-@onready var settings_menu = preload("res://scenes/settings_menu.tscn")
+@onready var loading_screen: PackedScene = preload("res://scenes/ui/loading_screen.tscn")
+@onready var button_hover: AudioStreamPlayer = $Sounds/ButtonHover
 
-func _ready():
-	play.button_down.connect(on_play_pressed)
-	settings.button_down.connect(on_settings_pressed)
-	exit.button_down.connect(on_exit_pressed)
+func _on_play_pressed() -> void:
+	Global.scene_to_load("res://scenes/world.tscn")
+	get_tree().change_scene_to_packed(loading_screen)
 
-func on_play_pressed() -> void:
-	get_tree().change_scene_to_packed(world)
+func _on_settings_pressed() -> void:
 	pass
 
-func on_settings_pressed() -> void:
-	get_tree().change_scene_to_packed(settings_menu)
-	pass
-
-func on_exit_pressed() -> void:
+func _on_exit_pressed() -> void:
 	get_tree().quit()
+
+func _on_button_mouse_entered() -> void:
+	button_hover.play()

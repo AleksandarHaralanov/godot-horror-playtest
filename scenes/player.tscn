@@ -31,15 +31,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
 light_color = Color(0.82, 1, 1, 1)
 light_energy = 0.0
 light_volumetric_fog_energy = 1.5
+light_specular = 4.0
 shadow_enabled = true
 shadow_opacity = 0.75
 shadow_blur = 5.0
 spot_range = 15.0
 spot_angle = 20.0
+spot_angle_attenuation = 2.0
 metadata/toggle = false
 
 [node name="SoundOff" type="AudioStreamPlayer3D" parent="Hand/Flashlight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -0.25)
 stream = ExtResource("5_0ve23")
 
 [node name="SoundOn" type="AudioStreamPlayer3D" parent="Hand/Flashlight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, -0.25)
 stream = ExtResource("4_wnlan")

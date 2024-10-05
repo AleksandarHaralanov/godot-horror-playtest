@@ -15,12 +15,16 @@ sky_material = SubResource("ProceduralSkyMaterial_kblnk")
 background_mode = 2
 background_energy_multiplier = 0.0
 sky = SubResource("Sky_07x2p")
+sdfgi_enabled = true
+sdfgi_bounce_feedback = 0.25
+sdfgi_energy = 0.0
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.3
 volumetric_fog_albedo = Color(0.611765, 0.611765, 0.611765, 1)
 volumetric_fog_gi_inject = 2.0
 volumetric_fog_anisotropy = 0.6
 volumetric_fog_length = 128.0
+adjustment_brightness = 2.75
 
 [node name="World" type="Node3D"]
 

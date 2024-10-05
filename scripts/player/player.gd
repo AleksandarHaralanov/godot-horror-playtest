@@ -39,25 +39,25 @@ func _input(event) -> void:
 		flashlight.set_meta("toggle", !flashlight.get_meta("toggle"))
 
 func _process(delta: float) -> void:
-	_rotations(delta)
+	rotations(delta)
 	
-	_controls_and_movement(delta)
+	controls_and_movement(delta)
 	
-	_flashlight_light(delta)
+	flashlight_light(delta)
 	
 	move_and_slide()
 
-func _rotations(delta: float) -> void:
+func rotations(delta: float) -> void:
 	head.rotation.y = lerp(head.rotation.y, -deg_to_rad(head_y_axis), CAMERA_ACCELERATION * delta)
 	camera.rotation.x = lerp(camera.rotation.x, deg_to_rad(camera_x_axis), CAMERA_ACCELERATION * delta)
 	
 	hand.rotation.y = -deg_to_rad(head_y_axis)
 	flashlight.rotation.x = deg_to_rad(camera_x_axis)
 
-func _flashlight_light(delta: float) -> void:
+func flashlight_light(delta: float) -> void:
 	flashlight.light_energy = lerp(flashlight.light_energy, flashlight_target_energy, delta * 10)
 
-func _get_current_speed() -> float:
+func get_current_speed() -> float:
 	if Input.is_action_pressed("sprint") and !Input.is_action_pressed("crouch"):
 		return SPRINTING_SPEED
 	elif Input.is_action_pressed("crouch") and !Input.is_action_pressed("sprint"):
@@ -65,13 +65,13 @@ func _get_current_speed() -> float:
 	else:
 		return WALKING_SPEED
 
-func _controls_and_movement(delta: float) -> void:
+func controls_and_movement(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 	else:
 		velocity.y -= GRAVITY * delta
 	
-	current_speed = _get_current_speed()
+	current_speed = get_current_speed()
 	
 	var input_dir = Input.get_vector("move_left", "move_right", "move_forward", "move_backward")
 	var direction = (head.transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
